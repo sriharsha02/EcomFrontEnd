@@ -338,3 +338,17 @@ html, body {
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+
+
+#container{
+    position: fixed;
+    bottom: 1px;
+    right: 10px;
+}
+.notification{
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    padding: 0.5rem;
+    margin: 1rem;
+}

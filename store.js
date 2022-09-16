@@ -114,10 +114,35 @@ window.addEventListener('DOMContentLoaded', () => {
         <div>
           <h1>${product.title}</h1>
           <img src=${product.imageUrl}></img>
-          <button>Add To Cart</button>
+          <button onclick='addToCart(${product.id})'>Add To Cart</button>
         </div>`
         parentSection.innerHTML += productHtml;
       });
     }
   })
 })
+
+function addToCart(productId){
+  axios.post('http://localhost:3000/cart', {productId: productId})
+    .then((response) => {
+      if(response.status === 200){
+        notifyUsers(response.data.message)
+
+      }
+    })
+    .catch((error) => {
+      console.log(error)
+      notifyUsers(error.data.message)
+    })
+}
+
+function notifyUsers(message){
+  const container = document.getElementById('container');
+    const notification = document.createElement('div')
+    notification.classList.add('notification')
+    notification.innerHTML = `<h4>${message}</h4>`
+    container.appendChild(notification);
+    setTimeout(() => {
+      notification.remove();
+    }, 2000)
+}
