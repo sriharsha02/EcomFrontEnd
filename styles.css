@@ -427,11 +427,35 @@ html, body {
     background-color: rgb(195, 194, 194);
 }
 
+.cartSectionContainer{
+    padding-left: 300px;
+    padding-right: 300px;
+    margin-top: 50px;
+}
+
+#cart-container table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+#cart-container table thead{
+    font-weight: 700;
+    
+
+}
+#cart-container table thead td{
+    background: grey;
+    color: white;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 6px 0;
+}
 /* Products  */
 #Products{
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: row;
     color: black;
+    row-gap: 5%;
 }
 #Products .btn{
     
